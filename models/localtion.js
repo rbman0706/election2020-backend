@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Proposition = require('./proposition')
 
 const LocaltionSchema = new Schema({
 
@@ -7,9 +8,12 @@ const LocaltionSchema = new Schema({
 
     name: { type: String, required: true, },
 
-    officals: { type: Array, required: true, },
+    officals: [],
 
-    propositions: { type: Array, required: true, },
+    propositions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Proposition'
+      }],
 
 });
 
