@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Proposition = require('./proposition')
+const Officals = require('./officials')
 
-const LocaltionSchema = new Schema({
+const LocationSchema = new Schema({
 
     zipCode: { type: Number , required: true,},
 
     name: { type: String, required: true, },
 
-    officals: [],
+    presCandidates: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Officals'
+    }],
 
     propositions: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -18,6 +22,6 @@ const LocaltionSchema = new Schema({
 });
 
 
-const LocaltionModel = mongoose.model('Localtion', LocaltionSchema);
+const LocationModel = mongoose.model('Location', LocationSchema);
 
-module.exports = LocaltionModel;
+module.exports = LocationModel;
