@@ -5,6 +5,5 @@ const ctrl = require('../controllers');
 
 router.get('/:id', ctrl.localtions.show)
 
-
 // exports
 module.exports = router;
