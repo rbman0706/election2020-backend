@@ -1,4 +1,6 @@
   
 module.exports = {
-    localtions: require('./localtions')
+  cart: require("./cart"),
+  officials: require("./officials"),
+  localtions: require('./localtions')
 };
