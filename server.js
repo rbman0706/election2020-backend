@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json())
 
 // middleware - cors
-app.use(cors())
+// app.use(cors())
 
 // middleware - API routes
 app.use('/api/election', routes.localtion);

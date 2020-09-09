@@ -15,4 +15,7 @@ mongoose.connect(connectionString, configOptions)
 
 module.exports = {
     User: require('./user'),
+    Localtion: require('./localtion'),
+    Officials: require('./officials'),
+    Proposition: require('./proposition')
 };
