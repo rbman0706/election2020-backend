@@ -6,6 +6,11 @@ const props = [
         name: 'Prop 1457',
         details: 'Hello my honey hello my baby hello my ragtime gal',
         url: 'www.WTF.com'
+    },
+    {
+        name: 'Prop 612',
+        details: 'And behold I am become death',
+        url: 'www.WTF.com'
     }
 
 ];
@@ -29,6 +34,12 @@ const localtions = [
     {
         zipCode: 60625,
         name: 'Memesvill',
+        officials: [],
+        propositions: []
+    },
+    {
+        zipCode: 312773,
+        name: 'Villa of memes',
         officials: [],
         propositions: []
     }
@@ -81,7 +92,7 @@ db.Localtion.deleteMany({}, (err, result) =>{
             }
             for (let i = 0; i < newLocaltions.length; i++){
                
-                db.Proposition.create(props[i], (err, newProps) => {
+                db.Proposition.create(props, (err, newProps) => {
                     let localtion = newLocaltions[i]
                     if (err) {
                         console.log(err);
